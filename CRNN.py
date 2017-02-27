@@ -14,14 +14,15 @@ r"""Performs the 1-D Convolutional RNN Operation, according to the paper:
   Args:
     tensor: The tensor to perform the operation on, shape `[batch, time-steps, features]`
             or `[batch, time-steps, features, 1]`.
-    kernel_size: int, the number of time-steps to include in every patch/window (same as in standard 1-D convolution).
+    kernel_size: The number of time-steps to include in every patch/window (same as in standard 1-D convolution).
     stride: the number of time-steps between two consecutive patches/windows (same as in standard 1-D convolution).
-    out_channels: the number of extracted features from each patch/window (in standard 1-D convolution 
+    out_channels: The number of extracted features from each patch/window (in standard 1-D convolution 
                   known as the number of feature maps), which is the hidden dimension of the recurrent 
                   layers that processes each patch/window.
     rnn_n_layers: The number of recurrent layers to process the patches/windows. 
+		  (in the original paper was always =1). 
     rnn_type: Type of recurrent layers to use: `simple`/`lstm`/`gru`
-    bidirectional: whether to use a bidirectional recurrent layers (such as BLSTM, when the rnn_type is 'lstm'). 
+    bidirectional: Whether to use a bidirectional recurrent layers (such as BLSTM, when the rnn_type is 'lstm'). 
                    If True, The actual number of extracted features from each patch/window is `2 * out_channels`.
     w_std: Weights in the recurrent layers will be initialized randomly using a Gaussaian distribution with
            zero mean and a standard deviation of `w_std`. Biases are initialized with zero. 
