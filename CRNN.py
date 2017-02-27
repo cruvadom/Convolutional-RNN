@@ -2,7 +2,7 @@ import tensorflow as tf
 
 r"""Performs the 1-D Convolutional RNN Operation, according to the paper:
   Convolutional RNN: an Enhanced Model for Extracting Features from Sequential Data (https://arxiv.org/abs/1602.05875)
-  Gil Keren and Björn Schuller. 
+  Gil Keren and Bjoern Schuller. 
 
   Calling the below function is equivalnet to applying one CRNN layer. For a deep model with a few
   CRNN layers, the function should be invoked multiple times. 
