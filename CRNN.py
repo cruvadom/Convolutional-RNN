@@ -1,9 +1,14 @@
 import tensorflow as tf
 
-r"""Performs the 1-D Convolutional RNN Operation, according to https://arxiv.org/abs/1602.05875
+r"""Performs the 1-D Convolutional RNN Operation, according to the paper:
+  Convolutional RNN: an Enhanced Model for Extracting Features from Sequential Data (https://arxiv.org/abs/1602.05875)
+  Gil Keren and Björn Schuller. 
+
+  Calling the below function is equivalnet to applying one CRNN layer. For a deep model with a few
+  CRNN layers, the function should be invoked multiple times. 
 
   Given a tensor, the function extracts patches of `kernel_size` time-steps, and processed each 
-  with a recurrent neural network. The hidden state of the recurrent neural network is then 
+  with one or more recurrent layers. The hidden state of the recurrent neural network is then 
   returned as the feature vector representing the path. 
 
   Args:
